@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f7fb">
+  <title>ApexPlanet Internship Tasks | Arjun Jaiswal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f7fb;
+      --ink: #0f2140;
+      --muted: #4a5a75;
+      --orange: #c24a08;
+      --line: #d5deea;
+      --display: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+      --body: "Instrument Sans", "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--ink);
+      background-color: var(--paper);
+      background-image: linear-gradient(135deg, rgba(255,255,255,.78), transparent 52%),
+        repeating-linear-gradient(0deg, transparent 0 39px, rgba(15,33,64,.035) 39px 40px);
+      font: 1rem/1.6 var(--body);
+    }
+
+    .wrap { width: min(900px, calc(100% - 40px)); margin-inline: auto; }
+
+    header { padding: 24px 0; border-bottom: 1px solid var(--line); }
+
+    .brand { color: var(--ink); font: 800 1.1rem var(--display); text-decoration: none; }
+
+    main { padding: clamp(48px, 9vw, 104px) 0 72px; }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--orange);
+      font-size: .8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 0;
+      font: 800 clamp(2.5rem, 7vw, 5rem)/.98 var(--display);
+    }
+
+    .intro { max-width: 590px; margin: 20px 0 42px; color: var(--muted); }
+
+    .task-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+
+    .task-list li { border-bottom: 1px solid var(--line); }
+
+    .task-link {
+      display: grid;
+      grid-template-columns: 58px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 18px;
+      min-height: 92px;
+      padding: 16px 4px;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .task-number { color: var(--orange); font-weight: 600; }
+    .task-name { display: block; font: 600 1.3rem/1.2 var(--display); }
+    .task-description { display: block; margin-top: 5px; color: var(--muted); font-size: .95rem; }
+    .task-open { color: var(--orange); font-weight: 600; white-space: nowrap; }
+    .task-link:hover .task-name { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+    .task-link:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+
+    footer { padding: 20px 0 32px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 28px, 900px); }
+      .task-link { grid-template-columns: 40px minmax(0, 1fr); gap: 12px; }
+      .task-open { grid-column: 2; margin-top: -8px; }
+      .task-name { font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap"><a class="brand" href="./">ApexPlanet Internship</a></div>
+  </header>
+  <main class="wrap">
+    <p class="eyebrow">Arjun Jaiswal · Information Technology</p>
+    <h1>Internship tasks</h1>
+    <p class="intro">A collection of projects built during the ApexPlanet web development internship. Choose a task to open it.</p>
+    <nav aria-label="Internship tasks">
+      <ol class="task-list">
+        <li><a class="task-link" href="task1/"><span class="task-number">01</span><span><span class="task-name">Placement Prep Hub</span><span class="task-description">A resource guide for campus placement preparation.</span></span><span class="task-open">Open task -&gt;</span></a></li>
+        <li><a class="task-link" href="task2/"><span class="task-number">02</span><span><span class="task-name">Placement Prep Tracker</span><span class="task-description">Plan topics and keep track of study progress.</span></span><span class="task-open">Open task -&gt;</span></a></li>
+        <li><a class="task-link" href="task3/"><span class="task-number">03</span><span><span class="task-name">Interactive Prep Dashboard</span><span class="task-description">A richer dashboard for placement study and practice.</span></span><span class="task-open">Open task -&gt;</span></a></li>
+        <li><a class="task-link" href="task4/"><span class="task-number">04</span><span><span class="task-name">Portfolio</span><span class="task-description">Projects, skills, notes, and contact information.</span></span><span class="task-open">Open task -&gt;</span></a></li>
+        <li><a class="task-link" href="task5/"><span class="task-number">05</span><span><span class="task-name">Portfolio Capstone</span><span class="task-description">An optimized, interactive portfolio experience.</span></span><span class="task-open">Open task -&gt;</span></a></li>
+      </ol>
+    </nav>
+  </main>
+  <footer><div class="wrap">ApexPlanet Web Development Internship</div></footer>
+</body>
+</html>
