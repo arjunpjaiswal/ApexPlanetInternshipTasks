@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Placement Prep Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#home"><span>Prep</span>Hub</a>
+    <nav aria-label="Main">
+      <ul id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#topics">Topics</a></li>
+        <li><a href="#tracker">Tracker</a></li>
+        <li><a href="#calendar">Calendar</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#break">Break</a></li>
+        <li><a href="#quotes">Quotes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">Theme</button>
+      <button class="icon-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap">
+      <h1>Track your prep. Land the <em>offer.</em></h1>
+      <p>One place to plan DSA, system design, and core CS revision for campus placements.</p>
+      <a class="btn" href="#tracker">Start tracking</a>
+    </div>
+  </section>
+
+  <section id="topics">
+    <div class="wrap">
+      <h2>What to cover</h2>
+      <p class="lead">Three tracks that show up in almost every placement process.</p>
+      <div class="cards">
+        <article class="card">
+          <h3>DSA</h3>
+          <p>Pattern-first practice beats random grinding.</p>
+          <ul><li>Arrays and strings</li><li>Trees and graphs</li><li>Dynamic programming</li></ul>
+        </article>
+        <article class="card">
+          <h3>System design</h3>
+          <p>Explain trade-offs, not just boxes and arrows.</p>
+          <ul><li>Caching and load balancing</li><li>Database sharding</li><li>Rate limiting</li></ul>
+        </article>
+        <article class="card">
+          <h3>Core CS</h3>
+          <p>The fundamentals interviewers love to probe.</p>
+          <ul><li>OS: processes and threads</li><li>DBMS: normalization, indexing</li><li>Networks: TCP and HTTP</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="tracker">
+    <div class="wrap">
+      <h2>Prep tracker</h2>
+      <p class="lead">Add a task, tick it off, delete it. Your list is saved in this browser.</p>
+      <div class="tracker">
+        <div class="add-row">
+          <input id="taskInput" type="text" placeholder="e.g. Solve 2 LeetCode problems" maxlength="100" aria-label="New task">
+          <button class="btn" id="addBtn" type="button">Add task</button>
+        </div>
+        <div class="msg" id="taskMsg" role="alert"></div>
+        <div class="tracker-bar">
+          <span id="counter">0 of 0 completed</span>
+          <div class="filters" role="group" aria-label="Filter tasks">
+            <button type="button" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" data-filter="active" aria-pressed="false">Active</button>
+            <button type="button" data-filter="done" aria-pressed="false">Completed</button>
+          </div>
+        </div>
+        <ul id="taskList"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="calendar">
+    <div class="wrap">
+      <h2>Prep calendar</h2>
+      <p class="lead">Pick a date and plan what to study that day. Dates with plans show a dot.</p>
+      <div class="cal-layout">
+        <div class="cal">
+          <div class="cal-head">
+            <button class="icon-btn" id="calPrev" type="button" aria-label="Previous month">&lt;</button>
+            <h3 id="calTitle"></h3>
+            <button class="icon-btn" id="calNext" type="button" aria-label="Next month">&gt;</button>
+          </div>
+          <div class="cal-week" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+          <div class="cal-grid" id="calGrid"></div>
+          <button class="icon-btn" id="calToday" type="button">Jump to today</button>
+        </div>
+        <div class="tracker plan">
+          <h3 id="planTitle"></h3>
+          <div class="add-row">
+            <input id="planInput" type="text" placeholder="e.g. Mock interview at 5 PM" maxlength="80" aria-label="Plan for selected date">
+            <button class="btn" id="planAdd" type="button">Add</button>
+          </div>
+          <div class="msg" id="planMsg" role="alert"></div>
+          <ul id="planList"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quiz">
+    <div class="wrap">
+      <h2>Quick quiz</h2>
+      <p class="lead">Five questions on core CS. Pick an answer to see the explanation.</p>
+      <div class="quiz" id="quizBox" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="break">
+    <div class="wrap">
+      <h2>Programming break</h2>
+      <p class="lead">A fresh joke from a public API each time you ask.</p>
+      <div class="joke" aria-live="polite">
+        <p class="joke-text" id="jokeText">Press the button to load a joke.</p>
+        <p class="joke-punch" id="jokePunch" hidden></p>
+        <div class="joke-actions">
+          <button class="btn" id="jokeBtn" type="button">Get a joke</button>
+          <button class="icon-btn" id="punchBtn" type="button" hidden>Show punchline</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quotes">
+    <div class="wrap">
+      <h2>Words from great techies</h2>
+      <p class="lead">Choose a person. The page asks a public quotes API first and falls back to saved quotes if the API has none or is down.</p>
+      <div class="quote-card" aria-live="polite">
+        <div class="filters" id="authorBtns" role="group" aria-label="Choose a person">
+          <button type="button" data-author="Steve Jobs" aria-pressed="false">Steve Jobs</button>
+          <button type="button" data-author="Linus Torvalds" aria-pressed="false">Linus Torvalds</button>
+          <button type="button" data-author="Sundar Pichai" aria-pressed="false">Sundar Pichai</button>
+          <button type="button" data-author="any" aria-pressed="false">Surprise me</button>
+        </div>
+        <blockquote id="quoteText">Choose a person to load a quote.</blockquote>
+        <p class="quote-by" id="quoteBy"></p>
+        <span class="badge" id="quoteSrc" hidden></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p class="lead">Suggest a topic or report a problem. All fields are required.</p>
+      <form id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name">
+          <div class="error" id="nameErr"></div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email">
+          <div class="error" id="emailErr"></div>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message"></textarea>
+          <div class="error" id="messageErr"></div>
+        </div>
+        <button class="btn" type="submit">Send message</button>
+        <div class="success" id="success" role="status">Message sent. Thanks for reaching out!</div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Placement Prep Hub. Built with HTML, CSS, and JavaScript.</div></footer>
+
+<script src="script.js"></script>
+</body>
+</html>

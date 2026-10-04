@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skills | Arjun</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div class="bar wrap"><a class="logo" href="index.html">Arjun<span>.dev</span></a>
+<button id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav aria-label="Main"><ul id="nav"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="projects.html">Projects</a></li><li><a href="notes.html">Notes</a></li><li><a href="skills.html" aria-current="page">Skills</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div></header>
+<main class="wrap">
+<h1>Skills</h1>
+<p class="lead">Filter by category or minimum strength, then sort. Ratings are my own self-assessment out of 10. See them in use on the <a href="projects.html">Projects</a> page, or <a href="contact.html">get in touch</a>.</p>
+<div class="card"><div class="filters">
+<div><label for="cat">Category</label><select id="cat"><option value="all">All categories</option></select></div>
+<div><label for="min">Minimum strength: <span id="minOut"></span></label><input id="min" type="range" min="1" max="10" step="1" value="1"></div>
+<div><label for="sort">Sort by</label><select id="sort"><option value="strong">Strength: high to low</option><option value="weak">Strength: low to high</option><option value="name">Name: A to Z</option><option value="cat">Category</option></select></div>
+</div><button class="btn ghost" id="reset" type="button">Reset filters</button></div>
+<p class="muted" id="count" style="margin:20px 0 10px"></p>
+<div class="grid" id="grid"></div>
+</main>
+<footer><div class="wrap">&copy; 2026 Arjun. Built with HTML, CSS and JavaScript.</div></footer>
+<script src="common.js"></script><script src="skills.js"></script>
+</body></html>

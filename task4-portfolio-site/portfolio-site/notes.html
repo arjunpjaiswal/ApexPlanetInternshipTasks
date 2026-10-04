@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notes | Arjun</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div class="bar wrap"><a class="logo" href="index.html">Arjun<span>.dev</span></a>
+<button id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav aria-label="Main"><ul id="nav"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="projects.html">Projects</a></li><li><a href="notes.html" aria-current="page">Notes</a></li><li><a href="skills.html">Skills</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div></header>
+<main class="wrap">
+<h1>Notes</h1>
+<p class="lead">Notes are saved in your browser, so they are still here after a refresh.</p>
+<form id="noteForm" class="card" novalidate>
+<div class="notes-top"><div class="field"><label for="title">Title</label><input id="title" maxlength="60"></div>
+<div class="field"><label for="search">Search notes</label><input id="search" type="search" placeholder="Type to filter"></div></div>
+<div class="field"><label for="body">Note</label><textarea id="body" rows="4"></textarea></div>
+<button class="btn" id="saveBtn" type="submit">Save note</button> <span class="err" id="msg" role="alert"></span>
+</form>
+<p class="muted" id="count" style="margin:20px 0 10px"></p>
+<div class="grid" id="list"></div>
+</main>
+<footer><div class="wrap">&copy; 2026 Arjun. Built with HTML, CSS and JavaScript.</div></footer>
+<script src="common.js"></script><script src="notes.js"></script>
+</body></html>

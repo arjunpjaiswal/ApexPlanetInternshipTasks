@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Arjun</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div class="bar wrap"><a class="logo" href="index.html">Arjun<span>.dev</span></a>
+<button id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav aria-label="Main"><ul id="nav"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="projects.html">Projects</a></li><li><a href="notes.html">Notes</a></li><li><a href="skills.html">Skills</a></li><li><a href="contact.html" aria-current="page">Contact</a></li></ul></nav></div></header>
+<main class="wrap">
+<h1>Contact</h1>
+<p class="lead">Send me a message. All fields are required.</p>
+<form id="contactForm" class="card" style="max-width:560px" novalidate>
+<div class="field"><label for="name">Name</label><input id="name" autocomplete="name"><div class="err" id="nameErr"></div></div>
+<div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email"><div class="err" id="emailErr"></div></div>
+<div class="field"><label for="message">Message</label><textarea id="message" rows="5"></textarea><div class="err" id="messageErr"></div></div>
+<button class="btn" type="submit">Send message</button>
+<div class="ok" id="ok" role="status">Message sent. Thanks for reaching out!</div>
+</form>
+<p class="muted" style="margin-top:20px">Email: <a href="mailto:yourname@example.com">yourname@example.com</a> &middot; <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a></p>
+</main>
+<footer><div class="wrap">&copy; 2026 Arjun. Built with HTML, CSS and JavaScript.</div></footer>
+<script src="common.js"></script><script src="contact.js"></script>
+</body></html>

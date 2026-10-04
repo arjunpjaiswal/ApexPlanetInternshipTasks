@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arjun | Java Backend Developer</title>
+<meta name="description" content="Portfolio of Arjun, a final-year IT student and Java backend developer: projects, skills, notes app and contact.">
+<meta name="theme-color" content="#f2f5f1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ffd84a'/%3E%3Ctext x='16' y='23' font-size='20' font-weight='800' text-anchor='middle' font-family='sans-serif' fill='%2315221d'%3EA%3C/text%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("cap-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="bar wrap">
+    <a class="logo" href="#home">Arjun<span>.dev</span></a>
+    <div class="tools">
+      <button class="pill" id="themeBtn" type="button" aria-label="Switch colour theme">Dark mode</button>
+      <button class="pill" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    </div>
+    <nav aria-label="Main">
+      <ul id="nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#notes">Notes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <section class="hero" id="home">
+    <h1>Hi, I'm Arjun. I build <em>Java backends.</em></h1>
+    <p>Final-year IT student at RCOEM, Nagpur. I work with Spring Boot, MySQL and JDBC, and I like clean design patterns and practical AI integration.</p>
+    <div class="actions"><a class="btn" href="#projects">See my projects</a><a class="btn ghost" href="#contact">Get in touch</a></div>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p class="lead">I study Information Technology at Shri Ramdeobaba College of Engineering and Management (RCOEM), Nagpur. Backend development is my strongest area, and I have served as a Training and Placement Coordinator on campus.</p>
+    <div class="grid">
+      <div class="card"><h3>Stack</h3><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">MySQL</span><span class="tag">JDBC</span><span class="tag">JavaScript</span></div>
+      <div class="card"><h3>Focus</h3><p class="muted">Design patterns (Builder, Singleton, SOLID), LLM integration with Groq, and RAG pipelines.</p></div>
+      <div class="card"><h3>Right now</h3><p class="muted">Building portfolio-grade projects and preparing for software engineering interviews.</p></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p class="lead">Filter by tag or search by name.</p>
+    <div class="chips" id="tagChips" role="group" aria-label="Filter projects by tag"></div>
+    <div class="field"><label for="pSearch">Search projects</label><input id="pSearch" type="search" placeholder="Try &quot;RAG&quot; or &quot;SQL&quot;"></div>
+    <div class="grid" id="pGrid" aria-live="polite"></div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p class="lead">Ratings are my own self-assessment out of 10.</p>
+    <div class="card">
+      <div class="row2">
+        <div><label for="sCat">Category</label><select id="sCat"><option value="all">All categories</option></select></div>
+        <div><label for="sMin">Minimum strength: <span id="sMinOut"></span></label><input id="sMin" type="range" min="1" max="10" step="1" value="1"></div>
+        <div><label for="sSort">Sort by</label><select id="sSort"><option value="strong">Strength: high to low</option><option value="weak">Strength: low to high</option><option value="name">Name: A to Z</option><option value="cat">Category</option></select></div>
+      </div>
+      <button class="btn ghost" id="sReset" type="button">Reset filters</button>
+    </div>
+    <p class="muted" id="sCount" style="margin:18px 0 10px"></p>
+    <div class="grid" id="sGrid" aria-live="polite"></div>
+  </section>
+
+  <section id="notes">
+    <h2>Notes</h2>
+    <p class="lead">Notes are saved in your browser, so they are still here after a refresh.</p>
+    <form id="noteForm" class="card" novalidate>
+      <div class="row2"><div class="field"><label for="nTitle">Title</label><input id="nTitle" maxlength="60"></div>
+      <div class="field"><label for="nSearch">Search notes</label><input id="nSearch" type="search" placeholder="Type to filter"></div></div>
+      <div class="field"><label for="nBody">Note</label><textarea id="nBody" rows="4"></textarea></div>
+      <button class="btn" id="nSave" type="submit">Save note</button> <span class="err" id="nMsg" role="alert"></span>
+    </form>
+    <p class="muted" id="nCount" style="margin:18px 0 10px"></p>
+    <div class="grid" id="nList"></div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="lead">Send me a message. All fields are required.</p>
+    <form id="contactForm" class="card" style="max-width:560px" novalidate>
+      <div class="field"><label for="name">Name</label><input id="name" autocomplete="name"><div class="err" id="nameErr"></div></div>
+      <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email"><div class="err" id="emailErr"></div></div>
+      <div class="field"><label for="message">Message</label><textarea id="message" rows="5"></textarea><div class="err" id="messageErr"></div></div>
+      <button class="btn" id="sendBtn" type="submit">Send message</button>
+      <div class="ok" id="ok" role="status"></div>
+    </form>
+    <p class="muted" style="margin-top:20px">Email: <a id="mailLink" href="mailto:yourname@example.com">yourname@example.com</a> &middot; <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a></p>
+  </section>
+</main>
+
+<footer><div class="wrap">&copy; <span id="yr">2026</span> Arjun. Built with HTML, CSS and JavaScript.</div></footer>
+<a class="btn totop" id="toTop" href="#home" aria-label="Back to top">Top</a>
+</body>
+</html>

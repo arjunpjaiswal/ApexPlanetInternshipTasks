@@ -1,0 +1,6 @@
+{
+  "name": "task5-capstone",
+  "private": true,
+  "scripts": { "build": "node build.cjs" },
+  "devDependencies": { "esbuild": "^0.28.0" }
+}
